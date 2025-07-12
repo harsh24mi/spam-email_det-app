@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spam Email Classifier</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-light">
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">📧 Spam Email Classifier</h1>
+    <form method="post" action="/predict">
+      <div class="mb-3">
+        <textarea name="text" rows="6" class="form-control" placeholder="Paste your email content here..." required></textarea>
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="submit" class="btn btn-primary">Predict</button>
+      </div>
+    </form>
+
+    {% if result %}
+    <div class="alert alert-info mt-4 text-center">
+      <strong>Prediction:</strong> {{ result }}
+    </div>
+    {% endif %}
+
+    {% if history %}
+    <h4 class="mt-5">🕘 Prediction History</h4>
+    <ul class="list-group">
+      {% for item in history %}
+      <li class="list-group-item">
+        <strong>{{ item.label }}</strong>: {{ item.text[:80] }}...
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</body>
+</html>
