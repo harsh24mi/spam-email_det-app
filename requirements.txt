@@ -1,0 +1,11 @@
+Flask
+python-dotenv
+Flask
+python-dotenv
+transformers
+torch
+pytest
+pytest-flask
+pytest
+pytest-flask
+gunicorn
