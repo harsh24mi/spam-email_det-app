@@ -15,4 +15,4 @@ COPY . .
 
 # Tell the container to run app.py when it starts
 # Gunicorn is a production-ready web server
-CMD ["gunicorn", "--bind", "0.0.0.0:7860", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:7860", "app:create_app()"]
