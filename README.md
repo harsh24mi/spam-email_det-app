@@ -88,7 +88,7 @@ pytest
 
 ## 👤 Author
 
-* **Harsh Mishra** - [harsh24mi](https://github.com/harsh24mi)
+* **Harsh Raj** - [harsh24mi](https://github.com/harsh24mi)
 
 ## 📄 License
 
